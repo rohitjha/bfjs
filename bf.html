@@ -1,0 +1,41 @@
+<html ng-app="bf">
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" src="css/bootstrap.min.js" />
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="bf.js"></script>
+  </head>
+  <body ng-controller="bfController as bf">
+    <div class="container-fluid">
+    	<div class="row col-md-12 col-sm-12 col-xs-12">
+    		<h2>{{header}}</h2>
+		</div>
+
+		<div class="row">
+			<div class="col-md-9 col-sm-9 col-xs-12">
+				<div class="row">
+					<h3>{{program}}</h3>
+					<textarea id="code" name="program" rows="10" cols="36"></textarea>
+				</div>
+				<div class="row">
+					<h3>{{input}}</h3>
+					<textarea id="ip" name="input" rows="2" cols="36"></textarea>
+				</div>
+				<div class="row">
+					<br />
+					<button id="run" ng-click="compile()">Compile</button>
+					<button id="run" ng-click="reset()">Reset</button>
+				</div>
+				<div class="row" ng-if="compiled">
+					<h3>{{output}}</h3>
+					<textarea id="op" name="output" rows="10" cols="36">{{result}}</textarea>
+				</div>
+			</div>
+
+			<div class="col-md-3 col-sm-3 col-xs-12">
+			</div>
+		</div>
+    </div>
+  </body>
+</html>
